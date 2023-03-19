@@ -35,21 +35,24 @@ let student = [
 
 // BAI 1 
 
-// let age = window.prompt("Độ tuổi cần tìm :")
+let age = window.prompt("Độ tuổi cần tìm :")
 
 
 
 
-// for ( i = 0 ; i<= student.length; i++ ){
-//     if ( age == student[i].age ){
-//         console.log("Name : " + student[i].name + " "+ "age : "+ student[i].age)
+for ( i = 0 ; i<= student.length; i++ ){
+    let findOut =[]
+    if ( age == student[i].age ){
+        findOut=student[i].name
+        console.log("Name : " + findOut + " "+ "age : "+ student[i].age)
         
-//     }
-//     else{
-//         console.log("không tìm thấy!")
-//     }
+    }
+    else{
+        findOut= undefined
+        console.log(findOut)
+    }
     
-// }
+}
 
 
 
