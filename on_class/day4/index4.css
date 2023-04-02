@@ -1,0 +1,23 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 50vh;
+}
+#title{
+    margin-bottom: 50px;
+    font-size: 20px;
+}
