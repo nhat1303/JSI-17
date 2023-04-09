@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.background{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+
+}
+.box1{
+    display: flex;
+    justify-content: space-around;
+}
+.clock{
+    margin-left: 50px;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.clock-p{
+    width: 100px;
+    
+}
+.button-box{
+    margin-top: 20px;
+}
+#stopall{
+    width: 70px;
+    height: 40px;
+}
+#startall{
+    width: 70px;
+    height: 40px;
+}
+#pauseall{
+    width: 70px;
+    height: 40px;
+}

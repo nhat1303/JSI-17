@@ -10,14 +10,3 @@
     
 }
 
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 50vh;
-}
-#title{
-    margin-bottom: 50px;
-    font-size: 20px;
-}
