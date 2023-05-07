@@ -1,4 +1,5 @@
 import Register from "./index8.js"
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 class Login{
     $containerDiv
@@ -57,6 +58,17 @@ class Login{
 
     handleSubmit = (e) =>{
 
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            // ...
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+          });
     }
     gotoSignup = () =>{
         const signup = new Register();
