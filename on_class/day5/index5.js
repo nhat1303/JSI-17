@@ -1,7 +1,7 @@
 // BAI 1 
 let m = [1,2,3,4,5,6,"hh", "9",80,100]
 // let newM = m.filter(Number)
-let newM = m.filter((x) => x%1 ==0);
+let newM = m.filter((x) => x%1 ==0).map(Number);
 console.log(newM)
 
 let mSquared = newM.map((x)=> Math.pow(x,2))
@@ -32,9 +32,11 @@ console.log(newArr)
 
 let M = [1,2,4,5,6,7]
 let N = [3,5,675,8,96]
+let noNum = [1,8,10,96,7]
 
-let combine = [...M,...N].filter((x)=> x!= 1 && x!=8 && x!=10 && x!=96 && x!=7)
-console.log(combine)
+let combine = [...M,...N]
+let realcombine = combine.filter((x)=> !noNum.includes(x))
+console.log("bài 5",realcombine)
 
 
 
