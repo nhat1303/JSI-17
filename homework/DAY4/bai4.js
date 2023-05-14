@@ -53,7 +53,7 @@ let timer2 = null
 let timer3 = null
 let timer4 = null
 let timer5 = null
-let timer = null
+
 function stopWatch1(){
     seconds1++;
     if ( seconds1 == 60){

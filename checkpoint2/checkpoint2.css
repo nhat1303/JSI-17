@@ -1,0 +1,31 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 100px;
+}
+
+.clock-1{
+    display: flex;
+    
+}
+.btn-box{
+    margin-left: 20px;
+    display: flex;
+}
+.start-btn{
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.stop-btn{
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+}
