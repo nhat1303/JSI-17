@@ -1,5 +1,5 @@
-import Register from "./index8.js"
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import Register from "./register.js"
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
 
 class Login{
     $containerDiv
@@ -57,7 +57,18 @@ class Login{
     }
 
     handleSubmit = (e) =>{
+      e.preventDefault()
+      const email = this.$emailInputEmail.value
+      const password = this.$passInputPass.value
 
+      if ( email ==""){
+        prompt("Email required");
+        return;
+      }
+      if ( password.length < 6){
+        prompt("Password required");
+        return;
+      }
         const auth = getAuth();
         signInWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
@@ -71,7 +82,7 @@ class Login{
           });
     }
     gotoSignup = () =>{
-        const signup = new Register();
+        const signup = new Register(signup);
         //change active section
     }
 }

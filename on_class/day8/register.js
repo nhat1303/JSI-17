@@ -1,5 +1,5 @@
-import Login from "./index8.1.js"
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import Login from "./login.js"
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
 
 class Register{
     $containerDiv
@@ -64,26 +64,57 @@ class Register{
 
     }
 
+ 
+
     // bắt sự kiện khi nhấn nút submit
     handleSubmit = (e) =>{
+      e.preventDefault()
 
+      const email = this.$emailInputEmail.value
+      const password = this.$passInputPass.value
+      const confirmpass = this.$confirmPassInputPass.value
+      const userName = this.$nameInputTxt.value
 
+      if ( email ==""){
+        prompt("Email required");
+        return;
+      }
+      if ( password.length < 6){
+        prompt("Password required");
+        return;
+      }
+      if ( confirmpass ==""){
+        prompt("Confirmpassword required");
+        return;
+      }
+      if ( userName ==""){
+        prompt("Username required");
+        return;
+      }
+      if( password != confirmpass){
+        prompt("Wrong confirm password")
+        return;
+      }
+      this.setError()
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
             // Signed in 
+            console.log(user)
             const user = userCredential.user;
             // ...
           })
           .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
+            const alert = prompt(errorMessage)
             // ..
           });
     }
     gotoSignin = () =>{
-        const login = new Login();
+        const login = new Login(login);
         //change active section
+        app.changeActiveScreen()
     }
 }   
 
