@@ -1,3 +1,4 @@
+import app from "./index8.2.js"
 import Register from "./register.js"
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
 
@@ -27,15 +28,16 @@ class Login{
 
         this.$submitBtn = document.createElement("button")
         this.$submitBtn.type = "submit"
-        this.$submitBtn.innerHTML = "Loginr"
+        this.$submitBtn.innerHTML = "Login"
         this.$submitBtn.addEventListener("click", this.handleSubmit)
 
         this.$gotoSignupLink = document.createElement("a")
         this.$gotoSignupLink.innerHTML = "Don't have an account ? Sign up"
         this.$gotoSignupLink.addEventListener("click", this.gotoSignup)
 
+
         this.$containerDiv = document.createElement("div")
-        this.$containerDiv.classList.add("center", "app")
+        this.$containerDiv.classList.add("center","app")
 
         this.$titleHeader = document.createElement("h2")
         this.$titleHeader.innerHTML = "Login"
@@ -43,7 +45,7 @@ class Login{
         this.$signinForm = document.createElement("form")
     }
 
-    initReader = (container) =>{
+    initRender = (container) =>{
         this.$signinForm.appendChild(this.$emailInputEmail)
         this.$signinForm.appendChild(this.$nameInputTxt)
         this.$signinForm.appendChild(this.$passInputPass)
@@ -51,7 +53,7 @@ class Login{
 
         this.$containerDiv.appendChild(this.$titleHeader)
         this.$containerDiv.appendChild(this.$signinForm)
-        this.$containerDiv.appendChild(this.$gotoSigninLink)
+        this.$containerDiv.appendChild(this.$gotoSignupLink)
 
         container.appendChild(this.$containerDiv)
     }
@@ -60,13 +62,13 @@ class Login{
       e.preventDefault()
       const email = this.$emailInputEmail.value
       const password = this.$passInputPass.value
-
+      
       if ( email ==""){
-        prompt("Email required");
+        alert("Email required");
         return;
       }
       if ( password.length < 6){
-        prompt("Password required");
+        alert("Password required");
         return;
       }
         const auth = getAuth();
@@ -82,8 +84,9 @@ class Login{
           });
     }
     gotoSignup = () =>{
-        const signup = new Register(signup);
+        const signup = new Register();
         //change active section
+        app.changeActiveScreen(signup);
     }
 }
 

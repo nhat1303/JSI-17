@@ -9,20 +9,22 @@ class App{
         this.container = container
     }
 
-    changeActiveScreen ( screen){
+    changeActiveScreen (screen){
         if ( this.activeScreen !== undefined){
             this.container.innerHTML= ""
         }
         
-        this.activeScreen = screen
+        this.activeScreen = screen;
         this.activeScreen.initRender(this.container)
     }
 }
 
 const container = document.getElementById("app")
+
+
 const login = new Login();
 
-const app = new App();
+const app = new App(container);
 app.changeActiveScreen(login)
 
-export default App
+export default app;

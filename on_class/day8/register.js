@@ -1,3 +1,4 @@
+import app from "./index8.2.js"
 import Login from "./login.js"
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
 
@@ -39,12 +40,13 @@ class Register{
         this.$gotoSigninLink.addEventListener("click", this.gotoSignin)
     
         this.$containerDiv = document.createElement("div")
-        this.$containerDiv.classList.add("center", "app")
+        this.$containerDiv.classList.add("center")
 
         this.$titleHeader = document.createElement("h2")
         this.$titleHeader.innerHTML = "Create your account"
 
         this.$signupForm = document.createElement("form")
+        this.$signupForm.classList.add("centering","flex-column")
     
 
     }
@@ -66,7 +68,7 @@ class Register{
 
  
 
-    // bắt sự kiện khi nhấn nút submit
+
     handleSubmit = (e) =>{
       e.preventDefault()
 
@@ -76,23 +78,23 @@ class Register{
       const userName = this.$nameInputTxt.value
 
       if ( email ==""){
-        prompt("Email required");
+        alert("Email required");
         return;
       }
       if ( password.length < 6){
-        prompt("Password required");
+        alert("Password required");
         return;
       }
       if ( confirmpass ==""){
-        prompt("Confirmpassword required");
+        alert("Confirmpassword required");
         return;
       }
       if ( userName ==""){
-        prompt("Username required");
+        alert("Username required");
         return;
       }
       if( password != confirmpass){
-        prompt("Wrong confirm password")
+        alert("Wrong confirm password")
         return;
       }
       this.setError()
@@ -112,9 +114,9 @@ class Register{
           });
     }
     gotoSignin = () =>{
-        const login = new Login(login);
+        const login = new Login();
         //change active section
-        app.changeActiveScreen()
+        app.changeActiveScreen(login)
     }
 }   
 

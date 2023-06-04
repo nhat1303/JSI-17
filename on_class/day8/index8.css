@@ -1,4 +1,52 @@
-.app{
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#app{
+    display: flex;
+    justify-content: center;
+    
+}
+.center{
+    width: 300px;
+    text-align: center;
+}
+.centering{
     display: flex;
     flex-direction: column;
+}
+
+
+input{
+    height: 30px;
+    margin-top: 20px;
+    padding-left: 5px;
+    background-color: rgb(80, 79, 79);
+    border: none;
+    border-radius: 5px;
+}
+
+button{
+    height: 30px;
+    margin-top: 20px;
+    background-color: red;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    transition: ease-in-out 0.3s;
+}
+button:hover{
+    cursor: pointer;
+    background-color: rgb(252, 98, 98);
+    
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+a:hover{
+    cursor: pointer;
+    
 }
